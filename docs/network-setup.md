@@ -80,8 +80,3 @@ Login to Org1 VM to create channel and deploy Chaincode. Org1 runs a cli contain
 ```bash
      ./run.sh
 ```
-
-Repeat step 4 to 7 for deploying different types of Ordering Services. Don’t forget to reset the network by running below script on Swarm Master VM
-```bash
-     ./reset.sh
-```

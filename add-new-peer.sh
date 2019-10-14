@@ -1,7 +1,7 @@
 #!/bin/bash
 
 source .env
-export PATH=$PATH:${PWD}/../bin
+export PATH=$PATH:${PWD}/bin
 export FABRIC_CFG_PATH=${PWD}
 
 # ---------------------------------------------------------------------------
@@ -75,7 +75,7 @@ sleep 2
 
 echo 
 echo "# ---------------------------------------------------------------------------"
-echo "# Check block height on new Peer (Peer1)"
+echo "# Check block height on new Peer (Peer2)"
 echo "# ---------------------------------------------------------------------------"
 docker exec \
 	-e "CORE_PEER_LOCALMSPID=Org1MSP" \

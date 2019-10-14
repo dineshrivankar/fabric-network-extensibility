@@ -15,7 +15,7 @@ PeerOrgs:
     Domain: org1.example.com
     EnableNodeOUs: false
     Template:
-      Count: 3
+      Count: 2
     Users:
       Count: 1
 

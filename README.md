@@ -7,10 +7,11 @@ This tool helps to extend Hyperledger Fabric Network by using Docker Swarm. By d
 * Sample docker compose files for Orderer, Zookeeper, Kafka, Peer and CLI service.
 * Service to add new Peer to Org.
 * Service to add new Org to network.
+* Service to remove Org from network.
 
 ### Installation Guide
 Kindly install all the [Prerequisites](https://hyperledger-fabric.readthedocs.io/en/release-1.4/prereqs.html) mentioned on the official documentation. Make sure we have all the Docker Images downloaded locally.
-We will be useing JQ for Filtering JSON data.
+We will be using JQ for Filtering JSON data.
 ```bash
        apt-get install jq
 ```
@@ -31,8 +32,10 @@ For exploration, we will take 4 VM with below specification.
 * [Deploy Fabric Network](docs/network-setup.md)
 * [Add New Peer](docs/add-new-peer.md)
 * [Add New Organization](docs/add-new-org.md)
+* [Remove Organization](docs/remove-org.md)
 
 
 That’s it!
 
-Feel free to submit a PR.
+
+

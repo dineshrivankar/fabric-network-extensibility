@@ -206,7 +206,7 @@ echo
 echo "# ---------------------------------------------------------------------------"
 echo "# Installing new version of chaincode on org1"
 echo "# ---------------------------------------------------------------------------"
-docker exec "$CLI_NAME" peer chaincode install -n "$CHAINCODE_NAME" -p "$CHAINCODE_SRC" -v $NEW_CHAINCODE_VERSION
+docker exec "$CLI_NAME" peer chaincode install -n "$CHAINCODE_NAME" -p "$CHAINCODE_SRC" -v $NEW_CHAINCODE_VERSION_ADD_ORG
 sleep 2
 
 echo 
@@ -220,7 +220,7 @@ docker exec \
 	-e "CORE_PEER_TLS_ROOTCERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt" \
 	-e "CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp" \
 	-e "CORE_PEER_ADDRESS=peer0.org2.example.com:7051" \
-	"$CLI_NAME" peer chaincode install -n "$CHAINCODE_NAME" -p "$CHAINCODE_SRC" -v $NEW_CHAINCODE_VERSION
+	"$CLI_NAME" peer chaincode install -n "$CHAINCODE_NAME" -p "$CHAINCODE_SRC" -v $NEW_CHAINCODE_VERSION_ADD_ORG
 sleep 2
 
 echo 
@@ -234,7 +234,7 @@ docker exec \
 	-e "CORE_PEER_TLS_ROOTCERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org3.example.com/peers/peer0.org3.example.com/tls/ca.crt" \
 	-e "CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org3.example.com/users/Admin@org3.example.com/msp" \
 	-e "CORE_PEER_ADDRESS=peer0.org3.example.com:7051" \
-	"$CLI_NAME" peer chaincode install -n "$CHAINCODE_NAME" -p "$CHAINCODE_SRC" -v $NEW_CHAINCODE_VERSION
+	"$CLI_NAME" peer chaincode install -n "$CHAINCODE_NAME" -p "$CHAINCODE_SRC" -v $NEW_CHAINCODE_VERSION_ADD_ORG
 sleep 10
 
 echo 
@@ -255,7 +255,7 @@ echo
 echo "# ---------------------------------------------------------------------------"
 echo "# Upgrade endorsement policy to include org3"
 echo "# ---------------------------------------------------------------------------"
-docker exec "$CLI_NAME" peer chaincode upgrade -o "$ORDERER_NAME":7050 -C "$CHANNEL_NAME" -n "$CHAINCODE_NAME" "$CHAINCODE_SRC" -v $NEW_CHAINCODE_VERSION  -c '{"Args":["init","a", "90", "b","210"]}' -P "OR('Org1MSP.member', 'Org2MSP.member', 'Org3MSP.member')" --tls --cafile $ORDERER_CA_LOCATION
+docker exec "$CLI_NAME" peer chaincode upgrade -o "$ORDERER_NAME":7050 -C "$CHANNEL_NAME" -n "$CHAINCODE_NAME" "$CHAINCODE_SRC" -v $NEW_CHAINCODE_VERSION_ADD_ORG  -c '{"Args":["init","a", "90", "b","210"]}' -P "OR('Org1MSP.member', 'Org2MSP.member', 'Org3MSP.member')" --tls --cafile $ORDERER_CA_LOCATION
 sleep 10 
 
 echo 

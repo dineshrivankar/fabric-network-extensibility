@@ -3,7 +3,7 @@
 **# Step 1**
 
 Generate crypto material for new organization. kindly explore below files.
-After genration of the artifacts, print out the new Org specific configuration material in JSON file (org3.json)
+After generation of the artefacts, print out the new Org specific configuration material in JSON file (org3.json)
 
 ```bash
     new-org/configtx.yaml
@@ -38,3 +38,4 @@ Below script will automate all the above processes.
      cd new-org/
      ./deploy.sh
 ```
+

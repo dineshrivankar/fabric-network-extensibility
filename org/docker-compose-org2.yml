@@ -13,7 +13,7 @@ services:
                 max_attempts: 3
             placement: 
                 constraints: 
-                    - node.hostname == pt-corcto17937
+                    - node.hostname == peer0.org2.example.com
         image: hyperledger/fabric-peer:latest
         hostname: peer0.org2.example.com
         environment:
@@ -61,7 +61,7 @@ services:
                 max_attempts: 3
             placement: 
                 constraints: 
-                    - node.hostname == pt-corcto17937
+                    - node.hostname == peer1.org2.example.com
         image: hyperledger/fabric-peer:latest
         hostname: peer1.org2.example.com
         environment:
